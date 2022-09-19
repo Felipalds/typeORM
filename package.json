@@ -1,21 +1,25 @@
 {
-  "name": "typeORM",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/Felipalds/typeORM.git",
-  "author": "Luiz Felipe Fonseca Rosa <luizfelipefonsecarosa@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^4.8.3"
-  },
-  "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
-  },
-  "dependencies": {
-    "@types/node": "^18.7.18",
-    "mongodb": "^3.7.3",
-    "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.3.9"
-  }
+   "name": "typeORM",
+   "version": "1.0.0",
+   "main": "index.js",
+   "repository": "https://github.com/Felipalds/typeORM.git",
+   "author": "Luiz Felipe Fonseca Rosa <luizfelipefonsecarosa@gmail.com>",
+   "license": "MIT",
+   "devDependencies": {
+      "ts-node-dev": "^2.0.0",
+      "typescript": "4.5.2",
+      "ts-node": "10.7.0",
+      "@types/node": "^16.11.10"
+   },
+   "scripts": {
+      "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+      "start": "ts-node src/index.ts",
+      "typeorm": "typeorm-ts-node-commonjs"
+   },
+   "dependencies": {
+      "@types/node": "^18.7.18",
+      "mongodb": "^3.0.8",
+      "reflect-metadata": "^0.1.13",
+      "typeorm": "0.3.9"
+   }
 }

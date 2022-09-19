@@ -10,6 +10,7 @@ Object-relational mapping for TypeScript
         7. yarn add @types/node
         8. yarn add mongodb@^3.6.0
         9. active decorators in tsconfig.json
+        10. npx typeorm init --database mongodb
 
 ## What is an ORM
     Object-relational mapping is a technique for converting data using object-oriented programming language. Basicly, you database and datas is nothing more than classes and objects.
