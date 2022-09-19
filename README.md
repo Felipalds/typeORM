@@ -14,3 +14,14 @@ Object-relational mapping for TypeScript
 
 ## What is an ORM
     Object-relational mapping is a technique for converting data using object-oriented programming language. Basicly, you database and datas is nothing more than classes and objects.
+
+## TypeORM
+### Models
+    For creating a table, you create a **model**. The models are the documents in Mongo
+### Entities
+    Entity is your model decorated by and **@Entity** decorator. With entities, you can **load, insert, update and remove** data.
+
+    - Each entity has columns (the fields in Mongo's JSON)
+    - You need to specify the PrimaryColumn (ObjectID)
+      - This PrimaryColumn can also be an auto-generated column
+    - In each column you can specify the correct type of the data
