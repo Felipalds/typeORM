@@ -2,6 +2,8 @@ import { AppDataSource } from "./data-source"
 import { User } from "./entity/User"
 import { Photo } from "./entity/Photo"
 import loading from "./loading"
+import updating from "./updating"
+import removing from "./removing"
 
 AppDataSource.initialize().then(async () => {
 
@@ -34,4 +36,6 @@ AppDataSource.initialize().then(async () => {
     // console.log("Here you can setup and run express / fastify / any other framework.")
 
     await loading()
+    //await updating()
+    //await removing()
 }).catch(error => console.log(error))
