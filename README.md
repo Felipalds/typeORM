@@ -25,3 +25,4 @@ Object-relational mapping for TypeScript
     - You need to specify the PrimaryColumn (ObjectID)
       - This PrimaryColumn can also be an auto-generated column
     - In each column you can specify the correct type of the data
+### Repositories
