@@ -23,4 +23,7 @@ export const AppDataSource = new DataSource({
     entities: [Photo, User, PhotoMetadata],
     migrations: [],
     subscribers: [],
+    ssl:true,
+    sslValidate: false,
+    retryWrites: false
 })
