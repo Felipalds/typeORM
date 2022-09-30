@@ -17,8 +17,9 @@
       "typeorm": "typeorm-ts-node-commonjs"
    },
    "dependencies": {
-      "@types/node": "^18.7.18",
+      "@types/node": "^18.7.21",
       "dotenv": "^16.0.2",
+      "fs": "^0.0.1-security",
       "mongodb": "^3.0.8",
       "reflect-metadata": "^0.1.13",
       "typeorm": "0.3.9"

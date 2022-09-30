@@ -5,12 +5,19 @@ import { User } from "./entity/User"
 import { Photo } from "./entity/Photo"
 import { PhotoMetadata } from "./entity/PhotoMetadata"
 
+
+
+import * as fs from 'fs'
+import * as path from 'path'
+
 console.log(process.env.DATABASE_HOST)
+console.log(fs.readFileSync(path.resolve('rds-combined-ca-bundle.pem')))
 
 export const AppDataSource = new DataSource({
     type: 'mongodb',
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    url: `mongodb://~~${process.env.DATABASE_HOST}`,
     host: process.env.DATABASE_HOST,
     port: Number(process.env.DATABASE_PORT),
     database: process.env.DATABASE_NAME,
@@ -23,7 +30,8 @@ export const AppDataSource = new DataSource({
     entities: [Photo, User, PhotoMetadata],
     migrations: [],
     subscribers: [],
-    ssl:true,
-    sslValidate: false,
+    ssl: true,
+    sslCA: fs.readFileSync(path.resolve('rds-combined-ca-bundle.pem')),
+    sslValidate: true,
     retryWrites: false
 })

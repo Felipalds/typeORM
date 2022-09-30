@@ -5,6 +5,8 @@ import loading from "./loading"
 import updating from "./updating"
 import removing from "./removing"
 
+console.log("ABCV")
+
 AppDataSource.initialize().then(async () => {
 
     console.log("Initialized")
