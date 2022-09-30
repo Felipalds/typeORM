@@ -17,7 +17,7 @@ export const AppDataSource = new DataSource({
     type: 'mongodb',
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    url: `mongodb://~~${process.env.DATABASE_HOST}`,
+    url: `mongodb://${process.env.DATABASE_HOST}`,
     host: process.env.DATABASE_HOST,
     port: Number(process.env.DATABASE_PORT),
     database: process.env.DATABASE_NAME,
@@ -32,6 +32,6 @@ export const AppDataSource = new DataSource({
     subscribers: [],
     ssl: true,
     sslCA: fs.readFileSync(path.resolve('rds-combined-ca-bundle.pem')),
-    sslValidate: true,
+    sslValidate: false,
     retryWrites: false
 })
