@@ -14,10 +14,10 @@ console.log(process.env.DATABASE_HOST)
 console.log(fs.readFileSync(path.resolve('rds-combined-ca-bundle.pem')))
 
 export const AppDataSource = new DataSource({
-    type: 'mongodb',
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    url: `mongodb://${process.env.DATABASE_HOST}`,
+    type: process.env.TYPE || 'mongodb',
+    useNewUrlParser: process.env.USE_NEW_URL_PARSER || true,
+    useUnifiedTopology: process.env.USE_UNIFIED_TOPOLOGY || true,
+    url: process.env.DATABASE_HOST,
     host: process.env.DATABASE_HOST,
     port: Number(process.env.DATABASE_PORT),
     database: process.env.DATABASE_NAME,
@@ -25,13 +25,13 @@ export const AppDataSource = new DataSource({
     username: process.env.DATABASE_USERNAME,
     password: process.env.DATABASE_PASSWORD,
     authSource: process.env.DATABASE_AUTH_SOURCE,
-    synchronize: true,
-    logging: false,
+    synchronize: process.env.SYNCHRONIZE || true,
+    logging: process.env.LOGGING || false,
     entities: [Photo, User, PhotoMetadata],
     migrations: [],
     subscribers: [],
-    ssl: true,
+    ssl: process.env.SSL || true,
     sslCA: fs.readFileSync(path.resolve('rds-combined-ca-bundle.pem')),
-    sslValidate: false,
-    retryWrites: false
+    sslValidate: process.env.SSL_VALIDATE || false,
+    retryWrites: process.env.RETRY_WRITES || false
 })
