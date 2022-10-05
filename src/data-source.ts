@@ -10,12 +10,9 @@ import { PhotoMetadata } from "./entity/PhotoMetadata"
 import * as fs from 'fs'
 import * as path from 'path'
 
-console.log(process.env.DATABASE_HOST)
-console.log(fs.readFileSync(path.resolve('rds-combined-ca-bundle.pem')))
-console.log(Boolean(process.env.USE_UNIFIED_TOPOLOGY))
 
 export const AppDataSource = new DataSource({
-    type:'mongodb',
+    type: process.env.TYPE as 'mongodb' || 'mongodb',
     useNewUrlParser: Boolean(process.env.USE_NEW_URL_PARSER) || true,
     useUnifiedTopology: Boolean(process.env.USE_UNIFIED_TOPOLOGY) || true,
     //url: process.env.DATABASE_HOST,
