@@ -15,7 +15,7 @@ export const AppDataSource = new DataSource({
     type: process.env.TYPE as 'mongodb' || 'mongodb',
     useNewUrlParser: Boolean(process.env.USE_NEW_URL_PARSER) || true,
     useUnifiedTopology: Boolean(process.env.USE_UNIFIED_TOPOLOGY) || true,
-    //url: process.env.DATABASE_HOST,
+    url: process.env.URL,
     host: process.env.DATABASE_HOST,
     port: Number(process.env.DATABASE_PORT),
     database: process.env.DATABASE_NAME,
